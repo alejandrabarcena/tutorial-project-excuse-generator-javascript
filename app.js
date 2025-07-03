@@ -1,21 +1,15 @@
-window.onload = () => {
-  const who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
-  const action = ['ate', 'peed on', 'crushed', 'broke'];
-  const what = ['my homework', 'my phone', 'the car', 'my sandwich'];
-  const when = [
-    'before the class',
-    'when I was sleeping',
-    'while I was exercising',
-    'during my lunch',
-    'while I was praying'
-  ];
+window.onload = () => generateExcuse();
 
-  const excuse =
-    who[Math.floor(Math.random() * who.length)] + ' ' +
-    action[Math.floor(Math.random() * action.length)] + ' ' +
-    what[Math.floor(Math.random() * what.length)] + ' ' +
-    when[Math.floor(Math.random() * when.length)];
+function generateExcuse() {
+  let who = ['A two headed pinecone', 'The dog', 'My grandma', 'The mailman'];
+  let action = ['yelled at', 'peed on', 'ate', 'broke'];
+  let what = ['my sandwich', 'my homework', 'the car', 'my phone'];
+  let when = ['in my house', 'before the class', 'while I was sleeping', 'during lunch'];
 
+  let excuse = `${getRandom(who)} ${getRandom(action)} ${getRandom(what)} ${getRandom(when)}`;
   document.getElementById('excuse').innerText = excuse;
-};
+}
 
+function getRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
